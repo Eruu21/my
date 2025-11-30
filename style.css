@@ -104,58 +104,16 @@ p {
     text-align: center;
 }
 
-/* Navigasi */
-.navigation {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.nav-btn {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1.1rem;
-    padding: 10px 20px;
-    border: 2px solid var(--text-color);
-    background-color: #fff;
-    color: var(--text-color);
-    cursor: pointer;
-    margin: 0 10px;
-    border-radius: 5px 4px 6px 4px;
-    transition: all 0.3s;
-}
-#prev-btn {
-    transform: rotate(-1.5deg);
-}
-#next-btn {
-    transform: rotate(1deg);
-}
-
-.nav-btn:hover:not(:disabled) {
-    background-color: var(--text-color);
-    color: #fff;
-    box-shadow: var(--shadow);
-    transform: scale(1.05) rotate(0deg);
-}
-.nav-btn:active:not(:disabled) {
-    /* Tombol terlihat seakan "masuk" ke dalam */
-    transform: scale(0.96);
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nav-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
 /* === STYLING PER HALAMAN === */
 
 /* Halaman 1: Pembuka */
 .scrapbook-deco {
     position: absolute;
     pointer-events: none;
-    transition: transform 0.3s ease-out; /* Tambahkan ini */
+    transition: transform 0.3s ease-out;
 }
 .scrapbook-deco:hover {
-    transform: rotate(-8deg) scale(1.1); /* Tambahkan ini */
+    transform: rotate(-8deg) scale(1.1);
 }
 .flower { top: 20px; left: 20px; width: 100px; opacity: 0.7; }
 .tape { top: 30px; right: 30px; width: 150px; transform: rotate(10deg); }
@@ -289,99 +247,12 @@ p {
 }
 .sticky-note:hover {
     transform: scale(1.05) rotate(1deg);
-    animation: gentle-wiggle 0.3s ease-in-out; /* Tambahkan ini */
+    animation: gentle-wiggle 0.3s ease-in-out;
 }
 .sticky-note.yellow { background-color: var(--accent-yellow); transform: rotate(-2deg); }
 .sticky-note.pink { background-color: var(--accent-pink); transform: rotate(3deg); }
 .sticky-note.green { background-color: var(--accent-green); transform: rotate(-1deg); }
 
-/* Halaman 6: Video Polaroid */
-.polaroid-frame {
-    background: #fff;
-    padding: 20px;
-    padding-bottom: 60px; /* Area untuk caption */
-    border-radius: 2px 3px 2px 4px;
-    transform: rotate(2deg);
-    position: relative;
-}
-.polaroid-frame:hover {
-    transform: scale(1.03) rotate(1deg); 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
-    z-index: 50;
-    animation: gentle-wiggle 0.3s ease-in-out; /* Tambahkan ini */
-}
-.polaroid-frame::after { /* Pakai ::after agar tidak bentrok */
-    content: '';
-    position: absolute;
-    bottom: -15px; /* Posisikan di bawah polaroid */
-    right: 20px;
-    transform: rotate(5deg);
-    width: 100px;
-    height: 30px;
-    
-    /* Tape dengan warna berbeda */
-    background-color: rgba(173, 216, 230, 0.6); /* Warna biru tape */
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    border-left: 1px dashed rgba(0,0,0,0.1);
-    border-right: 1px dashed rgba(0,0,0,0.1);
-}
-.polaroid-frame iframe, .video-placeholder {
-    width: 100%;
-    max-width: 450px;
-    height: 300px;
-    border: 1px solid #eee;
-}
-.video-placeholder {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f0f0f0;
-    font-size: 1.5rem;
-    color: #aaa;
-}
-.polaroid-caption {
-    font-family: 'Caveat', cursive;
-    font-size: 1.5rem;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-}
-/* Halaman 7: Reveal Content */
-.reveal-flap {
-    background: var(--bg-color); /* Warna kertas surat */
-    border: 1px dashed #ccc;
-    padding: 40px 60px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.reveal-flap:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-.reveal-flap:active {
-    transform: scale(0.98); /* Sedikit 'mencet' ke dalam */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.reveal-flap p {
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1.3rem;
-    margin: 0;
-    color: #555;
-}
-.reveal-flap span {
-    font-size: 2rem;
-    display: block;
-    margin-top: 10px;
-    animation: pulse 1.5s infinite; /* Pakai animasi pulse dari kalender */
-}
-.reveal-content {
-    display: none; /* Sembunyi secara default */
-    margin-top: 30px;
-    font-size: 1.5rem; /* Sedikit lebih besar */
-}
 
 /* Responsif untuk Mobile */
 @media (max-width: 768px) {
@@ -412,18 +283,6 @@ p {
     .calendar { gap: 2px; }
     .day-name, .day { padding: 5px; font-size: 0.8rem; }
     
-    .polaroid-frame {
-        padding: 10px;
-        padding-bottom: 40px;
-    }
-    .polaroid-frame iframe, .video-placeholder { height: 200px; }
-    .polaroid-caption { font-size: 1.2rem; bottom: 10px; left: 10px; }
-
-    .navigation {
-        padding: 10px;
-        background: #fff;
-        box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
-    }
 }
 /* Animasi Pop-in untuk item di dalam halaman */
 .pop-item {
