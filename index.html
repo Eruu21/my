@@ -15,29 +15,76 @@
       href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Patrick+Hand&family=Kalam:wght@300;700&display=swap"
       rel="stylesheet"
     />
+
+    <style>
+      /* --- CSS OVERRIDE (NO IMAGES) --- */
+      
+      .book {
+        background-image: none !important;
+        background-color: #fdfaf6;
+      }
+      #page-1 {
+        background-image: repeating-linear-gradient(transparent, transparent 29px, #a8d0e6 30px) !important;
+        background-size: 100% 100%;
+        background-color: #fdfdf5 !important;
+      }
+      #page-3, #page-5 {
+        background-image: none !important;
+      }
+
+      /* CSS Tape (Pengganti Gambar Selotip) */
+      .css-tape {
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        backdrop-filter: blur(5px);
+        border-left: 2px dotted rgba(0,0,0,0.1);
+        border-right: 2px dotted rgba(0,0,0,0.1);
+        position: absolute;
+        height: 40px;
+        width: 140px;
+        z-index: 5;
+      }
+
+      /* Emoji Bunga (Pengganti Gambar Bunga) */
+      .flower-emoji {
+        font-size: 6rem;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        opacity: 0.8;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(5deg); }
+        100% { transform: translateY(0px) rotate(0deg); }
+      }
+      
+      .scrapbook-deco { display: none; } 
+    </style>
   </head>
   <body>
     <div class="book-container">
       <div class="book">
+        
         <div class="page active" id="page-1">
           <div class="page-content center-content">
-            <img
-              src="https://i.ibb.co/3sVs90g/doodle-flowers.png"
-              alt="Doodle"
-              class="scrapbook-deco flower"
-            />
-            <h1>This is for you, my love...</h1>
-            <img
-              src="https://i.ibb.co/7rmk8Wn/scrapbook-tape.png"
-              alt="Tape"
-              class="scrapbook-deco tape"
-            />
+            <div class="flower-emoji">🌸</div>
+            
+            <h1 style="z-index: 10;">This is for you, my love...</h1>
+            
+            <div class="css-tape" style="bottom: 80px; right: 40px; transform: rotate(-10deg); width: 120px;"></div>
+            
+            <p style="position: absolute; bottom: 10px; font-size: 0.8rem; color: #999; opacity: 0.6;">
+              (Geser layar / Tekan panah keyboard)
+            </p>
           </div>
         </div>
 
         <div class="page" id="page-2">
           <div class="page-content">
-            <h2>November</h2>
+            <h2>Harusnya sih...</h2>
             <div class="calendar">
               <div class="day-name">Min</div>
               <div class="day-name">Sen</div>
@@ -84,11 +131,64 @@
               <div class="day">29</div>
               <div class="day">30</div>
             </div>
-            <h3 class="bday-text">It’s your B’day!</h3>
+            <h3 class="bday-text">Niatnya ngucapin pas di sini...</h3>
           </div>
         </div>
 
         <div class="page" id="page-3">
+          <div class="page-content">
+            <h2>Eh, malah...</h2>
+            <div class="calendar">
+              <div class="day-name">Min</div>
+              <div class="day-name">Sen</div>
+              <div class="day-name">Sel</div>
+              <div class="day-name">Rab</div>
+              <div class="day-name">Kam</div>
+              <div class="day-name">Jum</div>
+              <div class="day-name">Sab</div>
+
+              <div class="day empty"></div>
+              
+              <div class="day" style="background: #3498db; color: white; border-radius: 50%; animation: pulse 1s infinite;">1</div>
+              <div class="day">2</div>
+              <div class="day">3</div>
+              <div class="day">4</div>
+              <div class="day">5</div>
+              <div class="day">6</div>
+              <div class="day">7</div>
+              <div class="day">8</div>
+              <div class="day">9</div>
+              <div class="day">10</div>
+              <div class="day">11</div>
+              <div class="day">12</div>
+              <div class="day">13</div>
+              <div class="day">14</div>
+              <div class="day">15</div>
+              <div class="day">16</div>
+              <div class="day">17</div>
+              <div class="day">18</div>
+              <div class="day">19</div>
+              <div class="day">20</div>
+              <div class="day">21</div>
+              <div class="day">22</div>
+              <div class="day">23</div>
+              <div class="day">24</div>
+              <div class="day">25</div>
+              <div class="day">26</div>
+              <div class="day">27</div>
+              <div class="day">28</div>
+              <div class="day">29</div>
+              <div class="day">30</div>
+              <div class="day">31</div>
+            </div>
+            <h3 class="bday-text" style="color: #e74c3c;">
+              Baru bisa kasih sekarang 🎁<br>
+              <span style="font-size: 0.8rem; color: #777;">(Nungguin "My Kisah" pulang dulu)</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="page" id="page-4">
           <div
             style="
               position: absolute;
@@ -129,25 +229,26 @@
           <div class="confetti"></div>
 
           <div class="page-content center-content">
-            <h2>Happy Birthday!</h2>
+            <h2>Kayaknya udah ga relate, jadi</h2>
 
             <p class="handwritten" style="margin-top: 20px">
-              Wish you all the best sayang.<br />
-              Semoga sehat selalu, bahagia terus, dan dilancarkan segala
-              urusannya.<br /><br />
-              Good luck for everything! ✨
+              <em>Anggap aja ini reward kecil dari ku buat apresiasi kamu</em><br>
+              Sekarang paketnya udah aman di tangan kan? <br>
+              Semoga suka yak<br><br>
+              
+              Sehat selalu, bahagia terus, dan makin sayang aku pastinya<br>
+              I'm always proud of you! ✨
             </p>
           </div>
         </div>
 
-        <div class="page" id="page-4">
+        <div class="page" id="page-5">
           <div class="page-content center-content">
-            <h2 class="pop-item pop-item-1">Your Birthday Gift</h2>
+            <h2 class="pop-item pop-item-1">Buat jajan nih dikit</h2>
 
             <div
               class="pop-item pop-item-2"
               style="
-                background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
                 background-color: #fbe7c6;
                 border: 2px dashed #d35400;
                 padding: 20px;
@@ -196,7 +297,7 @@
                   margin: 5px 0;
                 "
               >
-                Valid for: My Favorite Person
+                For: My kisah
               </p>
 
               <hr
@@ -211,7 +312,7 @@
                   font-weight: bold;
                 "
               >
-                GANTI-KODE
+                MJ4BJ-K243R-9WQQL
               </h2>
 
               <p
@@ -221,99 +322,15 @@
                   color: #7f8c8d;
                 "
               >
-                langsung saja cepatkan redeem
+                Anggap aja reward abis capek kerja (redeem gih)<br>
+                Moga masih bisa yak, hehe
               </p>
             </div>
           </div>
         </div>
 
-        <div class="page" id="page-5">
-          <div class="page-content">
-            <h2 class="pop-item pop-item-1">Notes for You</h2>
-
-            <div class="sticky-note yellow pop-item pop-item-1">
-              <p>
-                You are doing enough.<br />
-                Seriously.
-              </p>
-            </div>
-
-            <div class="sticky-note pink pop-item pop-item-2">
-              <p>
-                Take a deep breath.<br />
-                Everything will be okay.
-              </p>
-            </div>
-
-            <div class="sticky-note green pop-item pop-item-3">
-              <p>
-                Just so you know,<br />
-                I’m always proud of you.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="page" id="page-6">
-          <div class="page-content center-content">
-            <h2>Just a little message...</h2>
-
-            <div class="polaroid-frame">
-              <video
-                controls
-                style="width: 100%; max-width: 450px; height: 300px"
-              >
-                <source src="1114.mp4" type="video/mp4" />
-                Maaf, browser kamu tidak mendukung pemutaran video.
-              </video>
-            </div>
-
-            <p class="polaroid-caption">Suami lo kali</p>
-
-            <p
-              style="
-                font-size: 0.9rem;
-                color: #777;
-                margin-top: 5px;
-                font-family: 'Patrick Hand', cursive;
-              "
-            >
-              (Jujur capek banget nge-prompt biar mirip,<br />tapi kaga mirip
-              mirip ancrit)
-            </p>
-          </div>
-        </div>
-
-        <div class="page" id="page-7">
-          <div class="page-content center-content">
-            <img
-              src="https://i.ibb.co/7rmk8Wn/scrapbook-tape.png"
-              alt="Tape"
-              class="scrapbook-deco tape-2"
-            />
-            <h2 class="pop-item pop-item-1">One last thing...</h2>
-
-            <div class="reveal-flap pop-item pop-item-2" id="reveal-btn">
-              <p>Tap to open</p>
-              <span>💌</span>
-            </div>
-
-            <p class="handwritten reveal-content" id="hidden-message">
-              I’m not good with long cheesy texts,<br />
-              so I made this instead.<br /><br />
-              I hope this little site makes you smile.<br />
-              You deserve all the happiness today.<br /><br />
-              <strong>Happy Birthday! ❤️</strong>
-            </p>
-          </div>
-        </div>
       </div>
-
-      <div class="navigation">
-        <button id="prev-btn" class="nav-btn" disabled>&lt; Prev</button>
-        <button id="next-btn" class="nav-btn">Next &gt;</button>
       </div>
-    </div>
 
     <script src="script.js"></script>
   </body>
